@@ -351,7 +351,8 @@ class RandomWordsState extends State<RandomWords> {
               );
 
               future.then((onValue){
-                showDialog(
+                if (onValue != null) {
+                  showDialog(
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
@@ -366,8 +367,8 @@ class RandomWordsState extends State<RandomWords> {
                     ],);
                   }
                 );
+                }
               });
-              
             },
 
             tooltip: 'search',
